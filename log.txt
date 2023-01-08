@@ -1,0 +1,27 @@
+URL: /
+Timestamp: Sun Jan 08 2023 09:54:45 GMT-0800 (Pacific Standard Time)
+
+URL: /
+Timestamp: Sun Jan 08 2023 09:58:16 GMT-0800 (Pacific Standard Time)
+
+URL: /css/styles.css
+Timestamp: Sun Jan 08 2023 09:58:16 GMT-0800 (Pacific Standard Time)
+
+URL: /js/scripts.js
+Timestamp: Sun Jan 08 2023 09:58:16 GMT-0800 (Pacific Standard Time)
+
+URL: /favicon.ico
+Timestamp: Sun Jan 08 2023 09:58:17 GMT-0800 (Pacific Standard Time)
+
+URL: /documentation
+Timestamp: Sun Jan 08 2023 09:58:30 GMT-0800 (Pacific Standard Time)
+
+URL: /css/styles.css
+Timestamp: Sun Jan 08 2023 09:58:30 GMT-0800 (Pacific Standard Time)
+
+URL: /js/scripts.js
+Timestamp: Sun Jan 08 2023 09:58:30 GMT-0800 (Pacific Standard Time)
+
+URL: /favicon.ico
+Timestamp: Sun Jan 08 2023 09:58:30 GMT-0800 (Pacific Standard Time)
+
