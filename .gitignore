@@ -1,2 +1,4 @@
 #ignore all files in the node folder
 node_modules
+#ignore text file of movie info
+moviedata.txt
