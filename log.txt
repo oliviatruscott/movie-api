@@ -25,3 +25,15 @@ Timestamp: Sun Jan 08 2023 09:58:30 GMT-0800 (Pacific Standard Time)
 URL: /favicon.ico
 Timestamp: Sun Jan 08 2023 09:58:30 GMT-0800 (Pacific Standard Time)
 
+::1 - - [18/Jan/2023:21:54:25 +0000] "GET / HTTP/1.1" 200 8 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [18/Jan/2023:21:54:26 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [18/Jan/2023:22:06:09 +0000] "GET /movies HTTP/1.1" - - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [18/Jan/2023:22:06:10 +0000] "GET /documentation HTTP/1.1" 200 5810 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [18/Jan/2023:22:06:10 +0000] "GET /css/styles.css HTTP/1.1" 404 153 "http://localhost:8080/documentation" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [18/Jan/2023:22:06:10 +0000] "GET /index.js HTTP/1.1" 404 147 "http://localhost:8080/documentation" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [18/Jan/2023:22:06:18 +0000] "GET /documentation/movies HTTP/1.1" 404 159 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [18/Jan/2023:22:11:32 +0000] "GET /movies HTTP/1.1" - - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [18/Jan/2023:22:11:32 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+::1 - - [18/Jan/2023:22:12:03 +0000] "GET / HTTP/1.1" 200 8 "-" "PostmanRuntime/7.30.0"
+::1 - - [18/Jan/2023:22:12:41 +0000] "GET / HTTP/1.1" 200 8 "-" "PostmanRuntime/7.30.0"
+::1 - - [18/Jan/2023:22:15:28 +0000] "GET / HTTP/1.1" 200 8 "-" "PostmanRuntime/7.30.0"
