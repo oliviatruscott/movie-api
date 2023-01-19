@@ -5,7 +5,7 @@ const Movies = Models.Movie;
 const Users = Models.User;
 
 //allows mongoose to connest to databade created in mongo shell
-mongoose.connect('mongodb://localhost:27017/movieapiDB', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://127.0.0.1:27017/movieapiDB', {useNewUrlParser: true, useUnifiedTopology: true});
 
 const express = require('express'),
     morgan = require('morgan'),
@@ -125,7 +125,7 @@ app.delete('/users/:username/movies/:movieID', (req,res) => {
             console.error(err);
             res.status(500).send('Error: ' + err);
         } else {
-            res.json(updatedUser);
+            res.json(updateUser);
         }
     });
 });
