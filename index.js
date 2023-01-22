@@ -9,12 +9,28 @@ const express = require('express'),
     mongoose = require('mongoose'),
     Models = require('./models.js'),
     Movies = Models.Movie,
-    Users = Models.User;
+    Users = Models.User,
+    { check, validationResult } = require('express-validator');
 
 app.use(morgan('common', {stream: accessLogStream}));
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+const cors = require('cors');
+//list of allowed origins, make sure all are allowed (*??)
+let allowedOrigins = ['http://localhost:8080', 'http://testsite.com'];
+//limits users access to not allowed origins
+app.use(cors({
+    orgin: (origin, callback) => {
+        if(!origin) return callback(null, true);
+        if(allowedOrigins.indexOf(origin) === -1){
+            let message = 'The CORS policy for this application doesnt allow access from origin ' + origin;
+            return callback(new Error(message ), false);
+        }
+        return callback(null,true);
+    }
+}));
 
 let auth = require('./auth.js')(app);
 const passport = require('passport');
@@ -29,7 +45,20 @@ app.get('/', (req, res) => {
 });
 
 //new user (post)
-app.post('/users', (req, res) => {
+app.post('/users',
+[ //validation logic for request
+    check('username', 'Username is required').isLength({min: 5}),
+    check('username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
+    check('password', 'Password is required').not().isEmpty(),
+    check('email', 'Email does not appear to be valid.').isEmail()
+], (req, res) => {
+    //check the validation object for errors
+    let errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(422).json({ errors: errors.array() });
+    }
+    
+    let hashedPassword = Users.hashPassword(req.body.password);
     Users.findOne({ username: req.body.username })
     .then((user) => {
         if (user) {
@@ -38,7 +67,7 @@ app.post('/users', (req, res) => {
             Users
                 .create({
                     username: req.body.username,
-                    password: req.body.password,
+                    password: hashedPassword,
                     email: req.body.email,
                     birthday: req.body.birthday,
                 })
@@ -207,7 +236,8 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something broke!');
 });
 
-//listen for requests OLD
-app.listen(8080, () => {
-    console.log('listening on port 8080');
+//listen for requests, updated to use heroku
+const port = process.env.PORT || 8080;
+app.listen(port, '0.0.0.0', () => {
+    console.log('Listening on Port ' + port);
 });
