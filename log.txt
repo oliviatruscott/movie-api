@@ -106,3 +106,5 @@ Timestamp: Sun Jan 08 2023 09:58:30 GMT-0800 (Pacific Standard Time)
 ::1 - - [19/Jan/2023:22:57:23 +0000] "POST /users HTTP/1.1" 201 165
 ::1 - - [19/Jan/2023:22:57:43 +0000] "POST /login?Username=rando-v1&Password=randompass HTTP/1.1" 200 557
 ::1 - - [19/Jan/2023:22:57:59 +0000] "GET / HTTP/1.1" 200 8
+127.0.0.1 - - [16/Feb/2023:02:06:30 +0000] "POST /users HTTP/1.1" 422 95
+127.0.0.1 - - [16/Feb/2023:02:08:21 +0000] "POST /users HTTP/1.1" 422 95
