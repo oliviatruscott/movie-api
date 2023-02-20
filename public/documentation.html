@@ -17,11 +17,10 @@
 
     <body>
         <h1 class="page-container">Movie API Documentation</h1>
-        <p>Documentation content here</p>
         
         <!--api endpoints table-->
-        <!--add links for each endpoint for easier navigation and schemas??
-        https://myflixapi.smartcoder.dev/documentation -->
+        <!--add links for each endpoint for easier navigation and schemas?? -->
+        <!-- https://pacific-taiga-63279.herokuapp.com/ -->
         <h2>API Endpoints</h2>
         <table class="table">
             <thead>
@@ -35,7 +34,34 @@
                 </tr>
             </thead>
         
-            <tbody>   
+            <tbody>
+                <tr>
+                    <td>Allow new users to register</td>
+                    <td>/users</td>
+                    <td>POST</td>
+                    <td>-</td>
+                    <td>{ "username" : "testing", "password" : "password", "email" : "testing@test.com", "birthday" : "05-06-1999" } </td>
+                    <td>A JSON object holding data about the user that was added, including an ID and an empty array for favorite movies </td>
+                </tr>
+
+                <tr>
+                    <td>Allow existing users to login</td>
+                    <td>/login</td>
+                    <td>POST</td>
+                    <td>-</td>
+                    <td>{ "Username : "testing", "Password" : "password" }</td>
+                    <td>A JSON object displaying all user info, including a token for authorization</td>
+                </tr>
+        
+                <tr>
+                    <td>Allow new users update their user info</td>
+                    <td>/users/:id</td>
+                    <td>PUT</td>
+                    <td>:id</td>
+                    <td>{ "Username" : "testingupdated", "Password" : "newpassword", "Email" : "newemail@test.com" }</td>
+                    <td>A JSON object holding data about the user's updated information as well as information left untouched</td>
+                </tr>
+
                 <tr>
                     <td>Get a list of all movies</td>
                     <td>/movies</td>
@@ -58,7 +84,7 @@
                     <td>Get genre by name</td>
                     <td>/movies/genre/:genreName</td>
                     <td>GET</td>
-                    <td>:Name</td>
+                    <td>:genreName</td>
                     <td>-</td>
                     <td>A JSON object holding data about the genre of a movie</td>
                 </tr>
@@ -67,30 +93,11 @@
                     <td>Get director data by name</td>
                     <td>/movies/director/:directorName</td>
                     <td>GET</td>
-                    <td>:name</td>
+                    <td>:directorName</td>
                     <td>-</td>
                     <td>A JSON object holding data of a director</td>
                 </tr>
 
-                <tr>
-                    <td>Allow new users to register</td>
-                    <td>/users</td>
-                    <td>POST</td>
-                    <td>-</td>
-                    <td>A JSON object holding data about the users to add, structured like this { "name" : "deven", "Password": "1234", "Email": ""deven27@gmail.com", "Birthday": "05-06-1999" } </td>
-                    <td>A JSON object holding data about the user that was added, structured like this { "name" : "deven", "Password": "1234", "Email": "devon27@gmail.com", "Birthday": "05-06-1999" } including an ID </td>
-                </tr>
-        
-                <tr>
-                    <td>Allow new users update their user info</td>
-                    <td>/users/:id</td>
-                    <td>PUT</td>
-                    <td>:id</td>
-                    <td>-</td>
-                    <td>A JSON object holding data about the updated information</td>
-                </tr>
-        
-                
                 <tr>
                     <td>Add movie to favorite list</td>
                     <td>/users/:id/:movieTitle</td>
@@ -115,7 +122,7 @@
                     <td>DELETE</td>
                     <td>:id</td>
                     <td>-</td>
-                    <td>A text message indicating whether the User has deregistered</td>
+                    <td>A message indicating whether the User has deregistered</td>
                 </tr>
             </tbody>
         </table>
