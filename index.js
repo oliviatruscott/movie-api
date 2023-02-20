@@ -48,7 +48,7 @@ app.get('/', (req, res) => {
     res.send('Welcome!');
 });
 
-//new user (post)
+//new user
 app.post('/users',
 [ //validation logic for request
     check('username', 'Username is required').isLength({min: 5}),
@@ -65,7 +65,7 @@ app.post('/users',
     Users.findOne({ username: req.body.username })
     .then((user) => {
         if (user) {
-            return res.status(400).send(req.body.username + 'already exists');
+            return res.status(400).send(req.body.username + ' already exists');
         } else {
             Users
                 .create({
@@ -87,7 +87,7 @@ app.post('/users',
     });
 });
 
-//get all users (read)
+//get all users
 app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) => {
     Users.find()
     .then((users) => {
@@ -99,7 +99,7 @@ app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) =
     });
 });
 
-//get a user by username (read)
+//get a user by username
 app.get('/users/:username', passport.authenticate('jwt', { session: false }), (req, res) => {
     Users.findOne({ username: req.params.username })
     .then((user) => {
